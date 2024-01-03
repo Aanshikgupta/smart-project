@@ -6,6 +6,7 @@ import com.smartcomputers.smartproject.auth.role.repository.RoleRepository;
 import com.smartcomputers.smartproject.user.entity.User;
 import com.smartcomputers.smartproject.user.payload.RegisterUserDTO;
 import com.smartcomputers.smartproject.user.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,7 +21,7 @@ public class AdminSeeder implements ApplicationListener<ContextRefreshedEvent> {
 
     private final PasswordEncoder passwordEncoder;
 
-
+    @Autowired
     public AdminSeeder(
             RoleRepository roleRepository,
             UserRepository  userRepository,
